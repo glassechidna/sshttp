@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: sshttp
+      ContainerDefinitions:
+        - Name: sshttp
+          Image: glassechidna/sshttp
+          MemoryReservation: 128
+      Volumes: []
+Outputs:
+  TaskDefinition:
+    Value: !Ref TaskDefinition
